@@ -1,0 +1,6 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    # 排除鸿蒙 Flutter SDK 目录（不是业务代码）
+    - flutter_flutter/**

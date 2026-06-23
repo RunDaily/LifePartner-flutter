@@ -1,0 +1,48 @@
+name: flutter_application_1
+description: "A beautiful Flutter diary app - Android / iOS / HarmonyOS."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+# ══════════════════════════════════════════════════════════════
+#  此文件为 Android / iOS 依赖配置（官方 Flutter SDK）
+#  使用方法：cp pubspec_mobile.yaml pubspec.yaml
+#  或运行：./switch_platform.sh android
+# ══════════════════════════════════════════════════════════════
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── 数据持久化 ──────────────────────────────────────────────
+  sqflite: ^2.3.3
+  path: ^1.9.0
+
+  # ── KV 存储 ─────────────────────────────────────────────────
+  shared_preferences: ^2.3.2
+
+  # ── 状态管理（三端无差异，纯 Dart）──────────────────────────
+  provider: ^6.1.2
+
+  # ── 国际化（三端无差异，纯 Dart）───────────────────────────
+  intl: ^0.20.2
+
+  # ── ID 生成（三端无差异，纯 Dart）──────────────────────────
+  uuid: ^4.5.1
+
+  # ── UI 组件（三端无差异，纯 Flutter）────────────────────────
+  flutter_staggered_animations: ^1.1.1
+  google_fonts: ^6.2.1
+  flutter_slidable: ^3.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

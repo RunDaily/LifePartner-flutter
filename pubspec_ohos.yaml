@@ -1,0 +1,57 @@
+name: flutter_application_1
+description: "A beautiful Flutter diary app - Android / iOS / HarmonyOS."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  # 鸿蒙 Flutter SDK（flutter_flutter dev）内置 Dart 2.19.6
+  sdk: '>=2.18.0 <3.0.0'
+
+# ══════════════════════════════════════════════════════════════
+#  此文件为 HarmonyOS 专用依赖配置
+#  使用方法：cp pubspec_ohos.yaml pubspec.yaml
+#  构建命令：flutter build hap
+#
+#  鸿蒙专属包通过 git 依赖从 gitee 获取：
+#  - sqflite：鸿蒙 sig 版本（包名同为 sqflite，API 100% 兼容）
+#  - shared_preferences_ohos：shared_preferences 的鸿蒙平台实现
+# ══════════════════════════════════════════════════════════════
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── 鸿蒙专属：SQLite（包名与官方 sqflite 相同，接口完全一致）
+  sqflite:
+    git:
+      url: https://gitee.com/openharmony-sig/flutter_sqflite.git
+      path: sqflite
+      ref: master
+
+  path: ^1.8.0
+
+  # ── KV 存储：标准 API + 鸿蒙平台实现
+  shared_preferences: ^2.2.0
+  shared_preferences_ohos:
+    git:
+      url: https://gitee.com/openharmony-sig/flutter_packages.git
+      path: packages/shared_preferences/shared_preferences_ohos
+      ref: master
+
+  # ── 以下为纯 Dart/Flutter 包，三端无差异 ─────────────────
+  provider: ^6.0.5
+  intl: ^0.17.0
+  uuid: ^3.0.7
+  flutter_staggered_animations: ^1.1.1
+  google_fonts: ^4.0.4
+  flutter_slidable: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
